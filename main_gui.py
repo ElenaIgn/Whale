@@ -14,7 +14,7 @@ class WhaleDetectorGUI(ctk.CTk):
     def __init__(self):
         super().__init__()
         
-        self.title("Система автоматического мониторинга гренландских китов — ТГУ")
+        self.title("Система автоматического мониторинга гренландских китов")
         self.geometry("1100x650")
         
         # Поиск весов
@@ -116,10 +116,10 @@ class WhaleDetectorGUI(ctk.CTk):
             current_conf = float(self.conf_slider.get())
             
             try:
-                # Получаем предсказание (возвращается список результатов)
+                
                 results = self.model.predict(frame, conf=current_conf, verbose=False)
                 
-                # Извлекаем первый элемент списка и вызываем .plot() без спорных аргументов
+                
                 annotated_frame = results[0].plot()
                 
                 # Конвертация кадра OpenCV (BGR) в формат RGB для PIL
