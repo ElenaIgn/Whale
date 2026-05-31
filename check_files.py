@@ -17,7 +17,7 @@ found_any_img = 0
 found_any_txt = 0
 
 for root, dirs, files in os.walk('.'):
-    # Не лезем в виртуальное окружение и скрытые папки git/vscode
+    
     if 'venv' in root or '.git' in root or '.vscode' in root:
         continue
     
